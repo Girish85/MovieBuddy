@@ -7,12 +7,25 @@
     android:layout_height="match_parent"
     tools:context="com.example.usgir.movierockz.MainActivity">
 
-    <include
-        android:id="@+id/content"
-        layout="@layout/content"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:background="@drawable/movierockz">
 
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme" />
+
+        <include
+            android:id="@+id/content"
+            layout="@layout/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
     <android.support.v7.widget.ListViewCompat
         android:id="@+id/list"
         android:layout_width="280dp"

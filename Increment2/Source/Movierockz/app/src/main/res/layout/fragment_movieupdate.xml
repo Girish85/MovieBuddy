@@ -1,27 +1,25 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/lay"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/movierockz"
-    tools:context="layout.Movie">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="layout.movieupdate">
 
     <android.support.design.widget.AppBarLayout
-        android:id="@+id/appbar"
+        android:id="@+id/appbar2"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:background="@android:color/transparent">
 
-    <Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="60dp">
+        <Toolbar
+            android:id="@+id/toolbar3"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
 
             <android.support.design.widget.TabLayout
-                android:id="@+id/tablay"
+                android:id="@+id/tablay2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
@@ -33,13 +31,13 @@
                 app:tabTextColor="@color/back"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true" />
-</Toolbar>
+        </Toolbar>
     </android.support.design.widget.AppBarLayout>
     <android.support.v4.view.ViewPager
-        android:id="@+id/pager"
+        android:id="@+id/pager3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/appbar">
+        android:layout_above="@+id/appbar2">
 
     </android.support.v4.view.ViewPager>
 

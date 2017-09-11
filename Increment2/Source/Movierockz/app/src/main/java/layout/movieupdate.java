@@ -19,15 +19,14 @@ import com.example.usgir.movierockz.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Movie extends Fragment {
+public class movieupdate extends Fragment {
     ViewPager pager;
     TabLayout tabLayout;
     Context context;
     View view;
     String s[];
 
-
-    public Movie() {
+    public movieupdate() {
         // Required empty public constructor
     }
 
@@ -36,35 +35,36 @@ public class Movie extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view =  inflater.inflate(R.layout.fragment_movie, container, false);
-        s = new String[]{"Movies","TV-Shows"};
-        pager = (ViewPager)view.findViewById(R.id.pager);
-        tabLayout = (TabLayout)view.findViewById(R.id.tablay);
+        view =  inflater.inflate(R.layout.fragment_movieupdate, container, false);
+        s = new String[]{"Movies","TV-Shows","Movies","TV-Shows"};
+        pager = (ViewPager)view.findViewById(R.id.pager3);
+        tabLayout = (TabLayout)view.findViewById(R.id.tablay2);
         context = getActivity();
         FragmentManager manager = ((FragmentActivity)context).getSupportFragmentManager();
-        Myadapter myadapter = new Myadapter(manager);
+        Myadapters myadapter = new Myadapters(manager);
         pager.setAdapter(myadapter);
         tabLayout.setupWithViewPager(pager);
         tabLayout.getTabAt(0).setIcon(R.drawable.ic_movie_black_24dp);
         tabLayout.getTabAt(1).setIcon(R.drawable.ic_tv_black_24dp);
+        tabLayout.getTabAt(2).setIcon(R.drawable.ic_movie_black_24dp);
+        tabLayout.getTabAt(3).setIcon(R.drawable.ic_tv_black_24dp);
         return view;
     }
-
-    public class Myadapter extends FragmentPagerAdapter
+    public class Myadapters extends FragmentPagerAdapter
     {
 
-        public Myadapter(FragmentManager fm) {
+        public Myadapters(FragmentManager fm) {
             super(fm);
         }
 
         @Override
         public android.support.v4.app.Fragment getItem(int position) {
-            return Myfragment.getFragment(position);
+            return Myfragments.getFragment(position);
         }
 
         @Override
         public int getCount() {
-            return 2;
+            return 4;
         }
 
         @Override
@@ -72,11 +72,11 @@ public class Movie extends Fragment {
             return s[position];
         }
     }
-    public static class Myfragment extends android.support.v4.app.Fragment
+    public static class Myfragments extends android.support.v4.app.Fragment
     {
         public static android.support.v4.app.Fragment getFragment(int i)
         {
-            Myfragment myfragment = new Myfragment();
+            Myfragments myfragment = new Myfragments();
             Bundle args = new Bundle();
             args.putInt("pos",i);
             myfragment.setArguments(args);
@@ -93,5 +93,4 @@ public class Movie extends Fragment {
             return inflater.inflate(R.layout.fragment_tvshows,container,false);
         }
     }
-
 }
